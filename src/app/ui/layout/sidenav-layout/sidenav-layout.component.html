@@ -1,0 +1,34 @@
+<!-- Creates a layout with a left and right sidenav and implicit content. -->
+<div class="sidenav-layout">
+
+  <mat-toolbar class="sidenav-toolbar" color="primary">
+    <button mat-icon-button aria-label="Toggle navigation menu" (click)="sideOpened = !sideOpened">
+      <mat-icon *ngIf="!sideOpened">menu</mat-icon>
+      <mat-icon *ngIf="sideOpened">menu_open</mat-icon>
+    </button>
+
+    <span>My App</span>
+    <span class="spacer"></span>
+    <button mat-icon-button aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <div style="position: relative;">
+    <mat-sidenav-container class="sidenav-sidenav-container" autosize>
+      <mat-sidenav role="navigation" mode="side" [(opened)]="sideOpened">
+        <app-side-nav [isExpanded]="sideOpened"></app-side-nav>
+      </mat-sidenav>
+
+      <mat-sidenav-content>
+        <main>
+          <ng-content></ng-content>
+        </main>
+      </mat-sidenav-content>
+
+    </mat-sidenav-container>
+  </div>
+</div>

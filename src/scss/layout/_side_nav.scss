@@ -1,0 +1,25 @@
+.sidenav-layout {
+  display: flex;
+  flex-flow: column;
+
+  height: 100%;
+  width: 100%;
+
+  .sidenav-toolbar {
+    .spacer {
+      flex: 1 1 auto;
+    }
+  }
+
+  .sidenav-sidenav-container {
+    .sidenav-item {
+      * {
+        vertical-align: middle;
+        & + * {
+          margin-left: 0.5em;
+        }
+      }
+    }
+  }
+
+}
