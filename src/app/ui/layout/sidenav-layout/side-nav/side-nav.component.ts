@@ -9,6 +9,6 @@ export class SideNavComponent {
   @Input() isExpanded!: boolean;
   routeLinks = [
     { link: "about", name: "About", icon: "dashboard" },
-    { link: "locations", name: "Locations", icon: "account_balance" },
+    { link: "/example", name: "Examples", icon: "account_balance" },
   ];
 }

@@ -1,0 +1,39 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Dashboard</h1>
+  <mat-grid-list cols="2" rowHeight="350px">
+    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            {{card.title}}
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item>Expand</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div>
+            <p> Lorem fistrum diodenoo ese pedazo de se calle ustée. Ahorarr hasta luego Lucas pecador amatomaa jarl
+              hasta luego Lucas la caidita mamaar está la cosa muy malar caballo blanco caballo negroorl ese pedazo de.
+              Ese pedazo de no puedor condemor te voy a borrar el cerito jarl me cago en tus muelas ese que llega fistro
+              hasta luego Lucas tiene musho peligro me cago en tus muelas. Va usté muy cargadoo mamaar torpedo papaar
+              papaar la caidita me cago en tus muelas mamaar ahorarr llevame al sircoo diodenoo. Pecador mamaar me cago
+              en tus muelas pupita pecador. Sexuarl por la gloria de mi madre se calle ustée quietooor apetecan diodeno
+              caballo blanco caballo negroorl al ataquerl a wan a wan. Ahorarr quietooor jarl caballo blanco caballo
+              negroorl a wan ese hombree ahorarr ahorarr a peich llevame al sircoo.</p>
+
+            <p>Hasta luego Lucas te voy a borrar el cerito condemor pupita te voy a borrar el cerito amatomaa pupita
+              sexuarl la caidita qué dise usteer a wan. Al ataquerl llevame al sircoo amatomaa ahorarr a gramenawer de
+              la pradera caballo blanco caballo negroorl caballo blanco caballo negroorl tiene musho peligro...</p>
+
+
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

@@ -8,6 +8,12 @@
 // Layout
 @import './scss/layout/side_nav';
 
+// hack
+main {
+  box-sizing: border-box;
+  padding: 18px;
+}
+
 // Pages
 
 // Themes

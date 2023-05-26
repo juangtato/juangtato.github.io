@@ -8,14 +8,14 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class FormularioComponent {
   addressForm = this.fb.group({
-    company: null,
-    firstName: [null, Validators.required],
-    lastName: [null, Validators.required],
-    address: [null, Validators.required],
-    address2: null,
-    city: [null, Validators.required],
-    state: [null, Validators.required],
-    postalCode: [null, Validators.compose([
+    company: '',
+    firstName: ['', Validators.required],
+    lastName: ['', Validators.required],
+    address: ['', Validators.required],
+    address2: '',
+    city: ['', Validators.required],
+    state: ['', Validators.required],
+    postalCode: ['', Validators.compose([
       Validators.required, Validators.minLength(5), Validators.maxLength(5)])
     ],
     shipping: ['free', Validators.required]
@@ -85,7 +85,13 @@ export class FormularioComponent {
     {name: 'Wyoming', abbreviation: 'WY'}
   ];
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder) {
+    this.addressForm.patchValue({
+      company: 'Tato CO - Control is disabled',
+      address: 'Mi casa\nHabitación del fondo'
+    });
+    this.addressForm.controls.company.disable();
+  }
 
   onSubmit(): void {
     alert('Thanks!');
