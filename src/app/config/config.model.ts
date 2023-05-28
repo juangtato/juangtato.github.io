@@ -19,12 +19,6 @@ export const DEFAULT_CONFIG: ConfigData = {
       items: [
         {
           type: 'link',
-          link: "about",
-          label: "About",
-          icon: "dashboard"
-        },
-        {
-          type: 'link',
           link: "/example",
           label: "Examples",
           icon: "account_balance"
