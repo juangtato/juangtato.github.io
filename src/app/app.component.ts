@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ConfigService } from './config/service/config.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'personal-dashboard';
+  constructor(
+    private configService: ConfigService
+  ) {
+    console.log(this.configService.get('storage'));
+    console.log(this.configService.get<any>(''));
+  }
 }

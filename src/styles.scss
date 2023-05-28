@@ -12,6 +12,7 @@
 main {
   box-sizing: border-box;
   padding: 18px;
+  min-height: calc(100vh - 64px);
 }
 
 // Pages

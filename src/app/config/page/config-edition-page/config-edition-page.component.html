@@ -1,0 +1,23 @@
+<h1>Edit Configuration</h1>
+
+<form [formGroup]="form">
+  <!-- FIXME -->
+  <ng-container formGroupName="storage">
+    <ng-container formGroupName="pantry">
+      <div>
+        <label>Pantry ID</label>
+        <input type="text" formControlName="pantryId" />
+      </div>
+    </ng-container>
+  </ng-container>
+
+
+  <div>
+    <button type="button" (click)="cancel()">
+      Cancel
+    </button>
+    <button (click)="save()">
+      Save
+    </button>
+  </div>
+</form>

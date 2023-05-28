@@ -1,12 +1,15 @@
 <section [class.sidenav]="isExpanded">
   <mat-nav-list>
     <!-- <mat-list-item > -->
-      <a mat-list-item *ngFor="let route of routeLinks" routerLinkActive="active-link" class="sidenav-item" routerLink="{{ route.link }}">
-        <mat-icon mat-list-icon [matTooltip]="!isExpanded ? route.name : ''" matTooltipPosition="right">
-          {{ route.icon }}
+    <ng-container *ngFor="let item of config.items">
+      <a mat-list-item *ngIf="item.type == 'link'" routerLinkActive="active-link" class="sidenav-item"
+        routerLink="{{ item.link }}">
+        <mat-icon mat-list-icon [matTooltip]="!isExpanded ? item.label : ''" matTooltipPosition="right">
+          {{ item.icon }}
         </mat-icon>
-        <span *ngIf="isExpanded">{{ route.name }}</span>
+        <span *ngIf="isExpanded">{{ item.label }}</span>
       </a>
+    </ng-container>
     <!-- </mat-list-item> -->
   </mat-nav-list>
 </section>

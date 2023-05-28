@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { LayoutModule } from './ui/layout/layout.module';
+import { HttpClientModule } from '@angular/common/http';
+import { ConfigModule } from './config/config.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,9 @@ import { LayoutModule } from './ui/layout/layout.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+
+    ConfigModule.forRoot(),
 
     LayoutModule
   ],

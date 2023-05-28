@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'example',
     loadChildren: () => import('./module/example/example.module').then(m => m.ExampleModule)
+  },
+  {
+    path: 'config',
+    loadComponent: () => import('./config/page/config-edition-page/config-edition-page.component').then(c => c.ConfigEditionPageComponent)
   }
 ];
 
