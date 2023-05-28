@@ -3,6 +3,7 @@ import { ConfigService } from '../../config/service/config.service';
 import { PantryConfig } from './pantry.config';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { UrlAccess } from '../../shared/core/url-access';
 
 @Injectable({
   providedIn: 'root'
@@ -18,24 +19,17 @@ export class PantryStorageService {
 
   get<T>(basketName: string): Observable<T> {
     return this.http.get<T>(
-      this.url(this.baseUrl(), basketName)
+      UrlAccess.url(this.baseUrl(), 'basket', basketName)
     );
   }
 
   private baseUrl(): string {
     const config = this.configService.get<PantryConfig>(PantryStorageService.PANTRY_CONFIG);
     if (config){
-      return this.url(config.url, config.pantryId);
+      return UrlAccess.url(config.url, config.pantryId);
     } else {
       throw Error('There is no Pantry configuration');
     }
   }
 
-  private url(...parts: Array<string>): string {
-    let result = '';
-    for (const part of parts) {
-      result += (/\/$/.test(part)) ? part : `/${part}`;
-    }
-    return result;
-  }
 }
