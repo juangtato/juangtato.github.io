@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'config',
     loadComponent: () => import('./config/page/config-edition-page/config-edition-page.component').then(c => c.ConfigEditionPageComponent)
+  },
+  {
+    path: 'board-games',
+    loadChildren: () => import('./module/board-games/board-games.module').then(m => m.BoardGamesModule)
   }
 ];
 

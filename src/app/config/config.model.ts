@@ -24,6 +24,12 @@ export const DEFAULT_CONFIG: ConfigData = {
           icon: "account_balance"
         },
         {
+          type: 'link',
+          link: '/board-games',
+          label: 'Board Games',
+          icon: "casino"
+        },
+        {
           type: 'title',
           label: 'Settings'
         },

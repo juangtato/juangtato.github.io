@@ -1,0 +1,32 @@
+<form [formGroup]="form">
+  <div>
+    <label>Name</label>
+    <input type="text" formControlName="name" />
+    <div class="feedback">
+      Name is required
+    </div>
+  </div>
+
+  <div>
+    <label>Image (URL)</label>
+    <input type="text" formControlName="imageUrl" />
+  </div>
+
+  <div>
+    <label>Links (pending)</label>
+
+  </div>
+
+  <div>
+    <label>Description</label>
+    <textarea formControlName="description"></textarea>
+  </div>
+
+  <div>
+    <button type="button" (click)="cancel()">Cancel</button>
+
+    <button (click)="save()">
+      Save
+    </button>
+  </div>
+</form>

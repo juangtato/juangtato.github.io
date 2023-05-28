@@ -30,3 +30,5 @@
 ## Icons
 
 https://fonts.google.com/icons?hl=es-419&selected=Material+Symbols+Outlined:chevron_right:FILL@0;wght@400;GRAD@0;opsz@48&icon.platform=android
+
+https://fonts.google.com/icons?hl=es-419&icon.platform=android&icon.query=game&icon.set=Material+Icons

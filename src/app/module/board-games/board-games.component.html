@@ -1,0 +1,21 @@
+<h1>Board Games</h1>
+
+<ng-container *ngIf="data || gameList.length > 0; empty">
+  <app-board-game-list [gameList]="gameList"></app-board-game-list>
+</ng-container>
+
+<ng-template #empty>
+  No games yet...
+</ng-template>
+
+
+<div class="controls">
+  <ul>
+    <li>
+      <a routerLink="../add-game">Add Game</a>
+    </li>
+    <li>
+      <a routerLink="../new-gameplay">New Gameplay</a>
+    </li>
+  </ul>
+</div>
